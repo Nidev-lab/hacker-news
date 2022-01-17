@@ -4,7 +4,23 @@
 }
 
 .padding-logo{
-  padding: 2.75rem 0;
-  width: 208px;
-  height: 28px;
+  padding: 2rem 0;
+  width: 11rem;
+  height: 1.25rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .padding-logo{
+    padding: 2.25rem 0;
+    width: 12rem;
+    height: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .padding-logo{
+    padding: 2.75rem 0;
+    width: 13rem;
+    height: 1.5rem;
+  }
 }
