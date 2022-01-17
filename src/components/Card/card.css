@@ -1,0 +1,47 @@
+.container-cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card{
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  margin-top: 1.375rem;
+}
+
+.info-box{
+  padding: 0 26px;
+  margin-top: 2px;
+}
+
+.position-time-news{
+  display: flex;
+}
+
+.font-time-news{
+  font-size: 0.688rem;
+  font-family: 'Roboto Regular';
+  margin-left: 0.5rem;
+  color: #767676;
+}
+
+.font-description-news{
+  font-size: 0.875rem;
+  font-family: 'Roboto Regular';
+  color: #6b6b6b;
+  margin-top: 7px;
+}
+
+.favorite-box{
+  background-color: #fcfcfc;
+  width: 4.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 6px 6px 0;
+}

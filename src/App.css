@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('./assets/fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
 .container {
   padding: 0 1rem;
 }
@@ -76,7 +86,7 @@
   }
 
   .col-md-6 {
-    width: 50%;
+    width: 48%;
   }
 
   .col-md-7 {
@@ -130,7 +140,7 @@
   }
 
   .col-lg-6 {
-    width: 50%;
+    width: 48%;
   }
 
   .col-lg-7 {

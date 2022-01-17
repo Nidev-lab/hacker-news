@@ -4,9 +4,9 @@ import logo from '../../assets/img/hacker-news.svg';
 
 const Header = () => {
   return (
-    <div className='container shadow-header'>
+    <header className='container shadow-header'>
       <img src={logo} alt="logo-hacker-news" className='padding-logo'/>
-    </div>
+    </header>
   )
 }
 
