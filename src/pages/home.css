@@ -5,3 +5,9 @@
   background-color: #fff;
   padding: 5px 12px 5px 12px;
 }
+
+.container-cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
