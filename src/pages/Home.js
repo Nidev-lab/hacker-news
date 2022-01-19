@@ -3,18 +3,17 @@ import React, { useEffect, useState } from 'react';
 import Card from '../components/Card/Card';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination/Pagination';
+import InputRadio from '../components/InputRadio/InputRadio';
 
 const Home = () => {
   
-  // const filter = localStorage.getItem("filter") || 'angular'
   const [hits, setHits] = useState([])
   const [filter, setFilter] = useState('angular')
   const [page, setPage] = useState(0)
   const [pageQuantity, setpageQuantity] = useState(0)
+  const [isFav, setIsFav] = useState(true)
 
-  const handleChange = (e) => {
-    // console.log(e.target.value)
-    // localStorage.setItem("filter", e.target.value)
+  const handleSelectChange = (e) => {
     setFilter(e.target.value)
   }
 
@@ -22,7 +21,6 @@ const Home = () => {
     fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${filter}&page=${page}`)
       .then(resp => resp.json())
       .then(json => {
-        console.log(json)
         setHits(json.hits)
         setpageQuantity(json.nbPages)
       })
@@ -31,8 +29,9 @@ const Home = () => {
   return (
     <>
       <Header />
+      <InputRadio setIsFav={setIsFav}/>
       <main className='container'>
-        <select name="cars" id="cars" className='dropdown-technologies col-4' onChange={handleChange}>
+        <select name="cars" id="cars" className='dropdown-technologies col-4' onChange={handleSelectChange}>
           <option value="angular">
             Angular
           </option>
@@ -45,7 +44,9 @@ const Home = () => {
         </select>
         <div className='container-cards'>
           {
-            hits.map(data => <Card data={data}/>)
+            isFav
+              ? hits.map(data => <Card data={data}/>)
+              : <p>Hola</p>
           }
         </div>
         <Pagination pageQuantity={pageQuantity} setPage={setPage}/>

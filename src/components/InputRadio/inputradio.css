@@ -1,0 +1,33 @@
+.position-input-radio{
+  display: flex;
+  justify-content: center;
+  margin-top: 4.4rem;
+}
+.wrapper{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+.wrapper .option{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 16px;
+  border-radius: 2px;
+  border: solid 1px #d6d6d6;
+  font-family: 'Roboto Medium';
+  font-size: 16px;
+}
+input[type="radio"]{
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+  border-color: #1797ff;
+  color: #1797ff;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+  color: #1797ff;
+}
