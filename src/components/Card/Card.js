@@ -1,12 +1,25 @@
-import './card.css';
-import React from 'react';
-import clock from '../../assets/icons/clock.svg';
+import './card.css'
+import React from 'react'
+import clock from '../../assets/icons/clock.svg'
 import favempty from '../../assets/icons/favempty.svg'
+import favfull from '../../assets/icons/favfull.svg'
 
-const Card = ({ data }) => {
+const Card = ({ data, favorite }) => {
+
   if (!data.created_at || !data.author || !data.story_url || !data.story_title){
     return null
   }
+
+  const handleFavClick = data => {
+    let existingFavs = JSON.parse(localStorage.getItem("myFavs")) || []
+    let newFavs
+
+    existingFavs.push(data)
+    newFavs = existingFavs
+
+    localStorage.setItem("myFavs", JSON.stringify(newFavs))
+  }
+
 
   return (
     <div className='card col-12 col-md-6 col-lg-6'>
@@ -20,7 +33,7 @@ const Card = ({ data }) => {
         </div>
       </a>
       <div className='favorite-box'>
-        <img src={favempty} alt="" />
+        <img src={favorite ? favfull : favempty} alt="fav-icon" onClick={() => handleFavClick(data)}/>
       </div>
     </div>
   )

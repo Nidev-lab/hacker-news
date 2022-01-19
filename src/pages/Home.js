@@ -6,6 +6,7 @@ import Pagination from '../components/Pagination/Pagination';
 import InputRadio from '../components/InputRadio/InputRadio';
 
 const Home = () => {
+  let favs = JSON.parse(localStorage.getItem('myFavs'))
   
   const [hits, setHits] = useState([])
   const [filter, setFilter] = useState('angular')
@@ -21,18 +22,17 @@ const Home = () => {
     fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${filter}&page=${page}`)
       .then(resp => resp.json())
       .then(json => {
-        console.log(json)
         setHits(json.hits)
         setpageQuantity(json.nbPages)
       })
   }, [filter, page])
-
+  
   return (
     <>
       <Header />
-      <InputRadio setIsFav={setIsFav}/>
+      <InputRadio setIsFav={setIsFav} isFav={isFav}/>
       <main className='container'>
-        <select name="cars" id="cars" className='dropdown-technologies col-4' onChange={handleSelectChange}>
+        <select name="technologies" id="technologies" className='dropdown-technologies col-4' onChange={handleSelectChange}>
           <option value="angular">
             Angular
           </option>
@@ -46,10 +46,10 @@ const Home = () => {
         <div className='container-cards'>
           {
             isFav
-              ? hits.map((data, i) => <Card data={data} key={i}/>)
-              : <p>Hola</p>
+              ? hits.map((data, i) => <Card data={data} key={i} favorite={favs ? favs.some(({ objectID }) => objectID === data.objectID) : false}  />)
+              : favs.map((data, i) => <Card data={data} key={i} favorite={true} />)
           }
-        </div>
+        </div>  
         <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
       </main>
     </>
