@@ -21,10 +21,11 @@ const Home = () => {
     fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${filter}&page=${page}`)
       .then(resp => resp.json())
       .then(json => {
+        console.log(json)
         setHits(json.hits)
         setpageQuantity(json.nbPages)
       })
-  }, [filter, page]);
+  }, [filter, page])
 
   return (
     <>
@@ -45,7 +46,7 @@ const Home = () => {
         <div className='container-cards'>
           {
             isFav
-              ? hits.map(data => <Card data={data}/>)
+              ? hits.map((data, i) => <Card data={data} key={i}/>)
               : <p>Hola</p>
           }
         </div>
