@@ -9,7 +9,7 @@ const Home = () => {
   let favs = JSON.parse(localStorage.getItem('myFavs'))
   
   const [hits, setHits] = useState([])
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState('angular')
   const [page, setPage] = useState(0)
   const [pageQuantity, setpageQuantity] = useState(0)
   const [isFav, setIsFav] = useState(true)
@@ -26,8 +26,6 @@ const Home = () => {
         setpageQuantity(json.nbPages)
       })
   }, [filter, page])
-
-  console.log(favs);
   
   return (
     <>
@@ -35,9 +33,6 @@ const Home = () => {
       <InputRadio setIsFav={setIsFav} isFav={isFav}/>
       <main className='container'>
         <select name="technologies" id="technologies" className='dropdown-technologies col-4' onChange={handleSelectChange}>
-          <option value=''>
-            Choose an option
-          </option>
           <option value="angular">
             Angular
           </option>
@@ -48,17 +43,13 @@ const Home = () => {
             Vue
           </option>
         </select>
-        {
-          filter 
-            ? <div className='container-cards'>
-                {
-                  isFav
-                    ? hits.map((data, i) => <Card data={data} key={i} favorite={favs ? favs.some(({ objectID }) => objectID === data.objectID) : false}  />)
-                    : favs.map((data, i) => <Card data={data} key={i} favorite={true} />)
-                }
-              </div>
-            : <p>Choose an option to continue</p>
-        }
+        <div className='container-cards'>
+          {
+            isFav
+              ? hits.map((data, i) => <Card data={data} key={i} favorite={favs ? favs.some(({ objectID }) => objectID === data.objectID) : false}  />)
+              : favs.map((data, i) => <Card data={data} key={i} favorite={true} />)
+          }
+        </div>  
         <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
       </main>
     </>
