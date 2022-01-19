@@ -10,15 +10,15 @@ const Card = ({ data }) => {
 
   return (
     <div className='card col-12 col-md-6 col-lg-6'>
-      <div className='info-box'>
-        <div className='position-time-news'>
-          <img src={clock} alt="clock-card" />
-          <p className='font-time-news'>{data.created_at} {data.author}</p>
+      <a href={data.story_url} target='_blank' rel="noreferrer">
+        <div className='info-box'>
+          <div className='position-time-news'>
+            <img src={clock} alt="clock-card" />
+            <p className='font-time-news'>{data.created_at} {data.author}</p>
+          </div>
+            <p className='font-description-news'>{data.story_title}</p>
         </div>
-        <a href={data.story_url}>
-          <p className='font-description-news'>{data.story_title}</p>
-        </a>
-      </div>
+      </a>
       <div className='favorite-box'>
         <img src={favempty} alt="" />
       </div>
