@@ -15,6 +15,7 @@ a{
 .info-box{
   padding: 0 26px;
   margin-top: 2px;
+  align-self: center;
 }
 
 .position-time-news{
