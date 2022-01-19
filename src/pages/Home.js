@@ -33,15 +33,21 @@ const Home = () => {
       <Header />
       <InputRadio setIsFav={setIsFav} isFav={isFav}/>
       <main className='container'>
-        <Dropdown handleSelectChange={handleSelectChange} />
-        <div className='container-cards'>
-          {
-            isFav
-              ? hits.map((data, i) => <Card data={data} key={i} favorite={favs ? favs.some(({ objectID }) => objectID === data.objectID) : false}  />)
-              : favs.map((data, i) => <Card data={data} key={i} favorite={true} />)
-          }
-        </div>  
-        <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
+        {
+          isFav
+          ? <>
+              <Dropdown handleSelectChange={handleSelectChange} />
+              <Card data={hits} favorite={favs || []}/>
+              <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
+            </>
+          : <>
+              {
+                favs 
+                ? <Card data={favs || []} favorite={favs || []} />
+                : <p>You don't have favorites yet</p>
+              }
+            </> 
+        }
       </main>
     </>
   )
