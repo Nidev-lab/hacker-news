@@ -4,6 +4,7 @@ import Card from '../components/Card/Card';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination/Pagination';
 import InputRadio from '../components/InputRadio/InputRadio';
+import Dropdown from '../components/Dropdown/Dropdown';
 
 const Home = () => {
   let favs = JSON.parse(localStorage.getItem('myFavs'))
@@ -32,17 +33,7 @@ const Home = () => {
       <Header />
       <InputRadio setIsFav={setIsFav} isFav={isFav}/>
       <main className='container'>
-        <select name="technologies" id="technologies" className='dropdown-technologies col-4' onChange={handleSelectChange}>
-          <option value="angular">
-            Angular
-          </option>
-          <option value="reactjs">
-            React
-          </option>
-          <option value="vuejs">
-            Vue
-          </option>
-        </select>
+        <Dropdown handleSelectChange={handleSelectChange} />
         <div className='container-cards'>
           {
             isFav
