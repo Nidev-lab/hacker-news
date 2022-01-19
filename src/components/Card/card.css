@@ -10,6 +10,7 @@ a{
   border: solid 1px #979797;
   background-color: #fff;
   margin-top: 1.375rem;
+  transition: opacity 0.3s;
 }
 
 .card:hover{
