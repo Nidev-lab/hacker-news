@@ -1,0 +1,18 @@
+.position-pagination{
+  margin: 2rem 0;
+}
+
+.primary-button{
+  margin: 0 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.primary-button:active{
+  background-color: #1890ff;
+  color: white;
+  border: solid 1px #1890ff;
+}
