@@ -49,3 +49,11 @@ a{
   align-items: center;
   border-radius: 0 6px 6px 0;
 }
+
+.fav-icon-style{
+  cursor: pointer;
+}
+
+.fav-icon-style:hover{
+  background-image: url(../../assets/icons/favfull.svg);
+}
