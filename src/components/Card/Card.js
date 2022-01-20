@@ -31,7 +31,7 @@ const Card = ({ data, favorite }) => {
                     <img src={clock} alt="clock-card" />
                     <p className='font-time-news'>{info.created_at} {info.author}</p>
                   </div>
-                  <p className='font-description-news'>{info.story_title}</p>
+                  <p className='font-description-news' data-testid="data-title">{info.story_title}</p>
                 </div>
               </a>
               <div className='favorite-box'>
