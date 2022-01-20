@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Deployed site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was deployed in [Netlify App](https://hacker-news-tr.netlify.app/).
 
 ## Available Scripts
 
