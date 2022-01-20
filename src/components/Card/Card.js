@@ -1,19 +1,30 @@
 import './card.css'
-import React from 'react'
+import React, { useState } from 'react'
 import clock from '../../assets/icons/clock.svg'
 import favempty from '../../assets/icons/favempty.svg'
 import favfull from '../../assets/icons/favfull.svg'
 
-const Card = ({ data, favorite }) => {
+const Card = ({ data }) => {
+  let favs = JSON.parse(localStorage.getItem('myFavs'))
+
+  const [favorite, setFavorite] = useState(favs || [])
 
   const handleFavClick = info => {
     let existingFavs = JSON.parse(localStorage.getItem("myFavs")) || []
     let newFavs
 
+    if (existingFavs.some(({ objectID }) => objectID === info.objectID)) {
+      const itemDelete = favorite.filter(({ objectID }) => objectID !== info.objectID)
+      localStorage.setItem('myFavs', JSON.stringify(itemDelete))
+      setFavorite(JSON.parse(localStorage.getItem("myFavs")) || [])
+      return
+    }
+
     existingFavs.push(info)
     newFavs = existingFavs
 
     localStorage.setItem("myFavs", JSON.stringify(newFavs))
+    setFavorite(JSON.parse(localStorage.getItem("myFavs")) || [])
   }
 
   return (
