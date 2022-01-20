@@ -42,6 +42,7 @@ a{
 }
 
 .favorite-box{
+  height: 100%;
   background-color: #fcfcfc;
   width: 4.25rem;
   display: flex;
