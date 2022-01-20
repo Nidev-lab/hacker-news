@@ -17,6 +17,8 @@ const Home = () => {
 
   const handleSelectChange = (e) => {
     setFilter(e.target.value)
+    setPage(0)
+    localStorage.setItem('filter', JSON.stringify(e.target.value))
   }
 
   useEffect(() => {
@@ -27,8 +29,6 @@ const Home = () => {
         setpageQuantity(json.nbPages)
       })
     }, [filter, page])
-  
-  console.log(favs)
   
   return (
     <>
