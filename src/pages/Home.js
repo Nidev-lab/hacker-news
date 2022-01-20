@@ -29,6 +29,8 @@ const Home = () => {
         setpageQuantity(json.nbPages)
       })
     }, [filter, page])
+
+  console.log(favs.length);
   
   return (
     <>
@@ -44,9 +46,9 @@ const Home = () => {
             </>
           : <>
               {
-                favs 
+                favs.length !== 0 
                 ? <Card data={favs || []} />
-                : <p>You don't have favorites yet</p>
+                : <p className='without-favs'>You don't have favorites yet</p>
               }
             </> 
         }
