@@ -2,6 +2,20 @@
 
 This project was deployed in [Netlify App](https://hacker-news-tr.netlify.app/).
 
+##  To run the project locally: 
+
+You must clone the repo in your console:
+
+### `git clone https://github.com/Nidev-lab/hacker-news.git` 
+
+Install dependencies: 
+
+### `npm install`
+
+And just run the project:
+
+### `npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
