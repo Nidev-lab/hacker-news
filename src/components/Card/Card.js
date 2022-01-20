@@ -46,7 +46,7 @@ const Card = ({ data }) => {
                 </div>
               </a>
               <div className='favorite-box'>
-                <img src={favorite.some(({ objectID }) => objectID === info.objectID) ? favfull : favempty} alt="fav-icon" onClick={() => handleFavClick(info)} />
+                <img src={favorite.some(({ objectID }) => objectID === info.objectID) ? favfull : favempty} alt="fav-icon" onClick={() => handleFavClick(info)} className='fav-icon-style'/>
               </div>
             </div>
           )

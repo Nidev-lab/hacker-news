@@ -29,8 +29,6 @@ const Home = () => {
         setpageQuantity(json.nbPages)
       })
     }, [filter, page])
-
-  console.log(favs.length);
   
   return (
     <>
