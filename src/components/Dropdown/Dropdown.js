@@ -1,21 +1,20 @@
 import './dropdown.css'
 import React from 'react'
 
-const Dropdown = ({ handleSelectChange }) => {
-
+const Dropdown = ({ handleSelectChange, filter }) => {
   if(!handleSelectChange){
     return null
   }
 
   return (
-    <select name="technologies" id="technologies" className='dropdown-technologies col-12 col-md-3' onChange={handleSelectChange} data-testid="dropdown-tech">
-      <option value="angular">
+    <select name="technologies" id="technologies" className='dropdown-technologies col-12 col-md-3' onChange={handleSelectChange} data-testid="dropdown-tech" defaultValue={filter}>
+      <option value="angular" >
         Angular
       </option>
-      <option value="reactjs">
+      <option value="reactjs" >
         React
       </option>
-      <option value="vuejs">
+      <option value="vuejs" >
         Vue
       </option>
     </select>

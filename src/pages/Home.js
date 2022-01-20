@@ -38,7 +38,7 @@ const Home = () => {
         {
           isFav
           ? <>
-              <Dropdown handleSelectChange={handleSelectChange} />
+              <Dropdown handleSelectChange={handleSelectChange} filter={filter} />
               <Card data={hits} />
               <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
             </>
