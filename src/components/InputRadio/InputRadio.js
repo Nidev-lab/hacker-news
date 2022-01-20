@@ -1,10 +1,13 @@
 import './inputradio.css'
 import React from 'react'
 
-const InputRadio = ({ setIsFav, newFavs, isFav }) => {
+const InputRadio = ({ setIsFav, isFav }) => {
+  if(!setIsFav){
+    return null
+  }
   
   return (
-    <div className='position-input-radio'>
+    <div className='position-input-radio' data-testid="input-radio">
       <div className="wrapper">
         <input 
           type="radio" 
@@ -12,6 +15,7 @@ const InputRadio = ({ setIsFav, newFavs, isFav }) => {
           id="option-1" 
           onChange={() => setIsFav(true)} 
           checked={isFav}
+          data-testid="option-1"
         />
         <input 
           type="radio" 

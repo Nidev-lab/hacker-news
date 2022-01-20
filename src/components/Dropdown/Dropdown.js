@@ -2,8 +2,13 @@ import './dropdown.css'
 import React from 'react'
 
 const Dropdown = ({ handleSelectChange }) => {
+
+  if(!handleSelectChange){
+    return null
+  }
+
   return (
-    <select name="technologies" id="technologies" className='dropdown-technologies col-4' onChange={handleSelectChange}>
+    <select name="technologies" id="technologies" className='dropdown-technologies col-4' onChange={handleSelectChange} data-testid="dropdown-tech">
       <option value="angular">
         Angular
       </option>
