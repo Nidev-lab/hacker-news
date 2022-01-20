@@ -26,7 +26,9 @@ const Home = () => {
         setHits(json.hits)
         setpageQuantity(json.nbPages)
       })
-  }, [filter, page])
+    }, [filter, page])
+  
+  console.log(favs)
   
   return (
     <>
@@ -37,13 +39,13 @@ const Home = () => {
           isFav
           ? <>
               <Dropdown handleSelectChange={handleSelectChange} />
-              <Card data={hits} favorite={favs || []}/>
+              <Card data={hits} />
               <Pagination pageQuantity={pageQuantity} setPage={setPage}/>
             </>
           : <>
               {
                 favs 
-                ? <Card data={favs || []} favorite={favs || []} />
+                ? <Card data={favs || []} />
                 : <p>You don't have favorites yet</p>
               }
             </> 
