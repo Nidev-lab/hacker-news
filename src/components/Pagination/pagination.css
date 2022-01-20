@@ -1,8 +1,23 @@
 .position-pagination{
   margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.style-pagination{
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 39%;
+}
+
+.style-pagination::-webkit-scrollbar{
+  width: 0;
+  height: 0;
 }
 
 .primary-button{
+  font-family: 'Roboto Regular';
+  font-size: 14px;
   margin: 0 8px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -11,7 +26,13 @@
   cursor: pointer;
 }
 
-.primary-button:active{
+.primary-button:focus{
+  background-color: #1890ff;
+  color: white;
+  border: solid 1px #1890ff;
+}
+
+.active{
   background-color: #1890ff;
   color: white;
   border: solid 1px #1890ff;
