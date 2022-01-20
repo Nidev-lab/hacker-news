@@ -23,4 +23,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 If you want to see the coverage of the tests, you can use this command.
 
-![alt text](https://github.com/Nidev-lab/hacker-news/blob/main/coverage-test.png?raw=true)
+![image (6)](https://user-images.githubusercontent.com/53904695/150280532-17bbbf36-afeb-4a64-89f5-090d244543d0.png)
